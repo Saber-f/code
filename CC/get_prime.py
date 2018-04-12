@@ -2,28 +2,22 @@
 import timeit
 
 def get_prime(n):
-    N = 5
-    N_c = N
-    while True:
-        t = 3
-        while t <= N/t:
-            if N % t == 0:
-                N += 2
-                t = 3
-            else:
-                 t += 2
+    L = [3]
+    while n != 0:
+        L.append(L[len(L)-1]+2)
+        i = 0
+
+
+
+
         n -= 1
-        print(N - N_c,end = ' ')
-        N_c = N
         if n == 0:
-            break
-        N += 2
-    print()
-    print(N)
+            break;
 
 def get_prime2(n):
-    N = 5
-    while True:
+    N = 3
+    while n != 0:
+        N += 2
         t = 3
         while t*t <= N:
             if N % t == 0:
@@ -32,9 +26,6 @@ def get_prime2(n):
             else:
                  t += 2
         n -= 1
-        if n == 0:
-            break
-        N += 2
     print(N)
 
 n = eval(input('Input::'))
