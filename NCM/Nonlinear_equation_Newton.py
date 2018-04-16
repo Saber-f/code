@@ -16,7 +16,7 @@ def get_f():
     while True:
         f = input()
         if f == '':
-            break;
+            break
         f = list(f)
         i = 0
         while i < len(f):
