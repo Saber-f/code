@@ -5,7 +5,7 @@ from sympy import *
 print('please input data::')
 
 # 输入数据
-D = [];
+D = []
 while True:
     d = input().split()
     if len(d) != 2:
