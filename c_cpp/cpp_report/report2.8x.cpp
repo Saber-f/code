@@ -1,5 +1,6 @@
 //P160第四大题第八小题
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 
 void bec(char *s, int i)
