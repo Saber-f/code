@@ -3,7 +3,7 @@
 def next_prime(N):
     t = 3
     N += 2
-    while t <= N/t:
+    while t*t <= N:
         if N % t == 0:
             t = 3
             N += 2
