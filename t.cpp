@@ -3,9 +3,12 @@ using namespace std;
 
 int main(void)
 {
-    while(int i = 4) cout << i--;
+    if(1 < 3)
+    {
+        if(3 > 1)
+            break;
+        cout << "afds";
 
-
-
+    }
     return 0;
 }
