@@ -3,7 +3,7 @@
 #include <stdlib.h>
 using namespace std;
 
-void int2str(int n,char *s)
+void int2str(int n,char *&s)
 {
 	if (n == 0 && *s != 0)
 	{

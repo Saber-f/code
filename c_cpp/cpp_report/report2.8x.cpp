@@ -15,7 +15,7 @@ void bec(char *s, int i)
     s[i] = c;
 }
 
-void int2str(int n,char *s)
+void int2str(int n,char *&s)
 {
 	if (n == 0 && *s != 1)
 	{
