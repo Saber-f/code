@@ -1,7 +1,7 @@
 from numpy import *
 
 def list_str2num(A):
-    i = 0;
+    i = 0
     while i < len(A):
         A[i] = eval(A[i])
         i += 1
