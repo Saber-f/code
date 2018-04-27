@@ -40,4 +40,14 @@ def get_fist():
         i += 1
     return l;
 
+# Begine ga
+def ga():
+    fist = get_fist()
+    
+    point = [];
+    while x in fist:
+        point.append(f(x))
+        
+
+
 
