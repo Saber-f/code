@@ -6,7 +6,7 @@ def gcd(a,b):
     return gcd(b,a % b)
 
 def rho(n):
-    x = random.randint(1,10000)
+    x = random.randint(1,2**30)
     y = x
     i = 1
     k = 2
