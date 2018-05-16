@@ -32,7 +32,6 @@ def init():
         l_n += 1
         t //= dec
     i = 0
-    print('l_n::',l_n,' ',' ',peo)
     while i < peo:
         j = 0
         t = []
