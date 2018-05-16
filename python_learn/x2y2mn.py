@@ -53,7 +53,7 @@ def f():
             print(n_t1,' ',n_t2)
             exit()
         rt1[i] = 1 / rt2[i]
-        s1 += s1;s2 += s2;i += 1
+        s1 += rt1[i];s2 += rt2[i];i += 1
     i = 0
     while i < len(rt1):
         rt1[i] /= s1
