@@ -71,7 +71,10 @@ def ga():
         rt1.append(0)
         rt2.append(0)
         i += 1
+        
     f()
+    
+    
     i = 0
     while i < len(rt1):
         print(rt1[i],' ',rt2[i])
