@@ -47,7 +47,7 @@ def init():
     return peos_1
 
 # 适应度函数+排序
-def fl):
+def f():
     rt = [] # 评价结果
     i = 0;s2 = 0;s1 = 0
     for l_t in peos_1:
@@ -62,10 +62,8 @@ def fl):
     i = 0
     while i < len(rt1):
         rt1[i] /= s1
-
-
+        rt2[i] /= s2
         i += 1
-
 
 def ga():
     rt1 = [] # 被选取繁殖下一代的概率
@@ -74,9 +72,9 @@ def ga():
     while i < len(peos_1):
         rt1.append(0)
         rt2.append(0)
-
-    rt = f(peos_1)
-    print(rt)
+    rt = f()
+    print(rt1)
+    print(rt1)
 
 def main():
     init() # 初始化
