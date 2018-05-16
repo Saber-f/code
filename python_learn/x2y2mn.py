@@ -71,6 +71,7 @@ def ga():
     while i < len(peos_1):
         rt1.append(0)
         rt2.append(0)
+        i == 1
     f()
     print(rt1)
     print(rt2)
