@@ -55,28 +55,36 @@ def f():
         rt1[i] = 1 / rt2[i]
         s1 += rt1[i];s2 += rt2[i];i += 1
     rt1[0] /= s1;rt2[0] /= s2;i = 1
-    while i < len(rt1):
+    while i < len(rt1)-1:
         rt1[i] = rt1[i]/s1 + rt1[i-1]
-        rt2[i] = rt2[i]/s2 + rt2[i-1]
         i += 1
-    print()
+    rt1[i] = 1
 
 def ga():
     global rt1
     global rt2
     rt1 = [] # 被选取繁殖下一代的概率
     rt2 = [] # 变异，交叉概率由来
-    i = 0 # 
+    i = 0 # 初始rt1、rt2
     while i < len(peos_1):
         rt1.append(0)
         rt2.append(0)
         i += 1
-        
-    f()
-    i = 0
-    while i < len(rt1):
-        print(rt1(i),' ',rt2(i))
     
+    # 迭代求解
+    
+    f() # 获取新一轮的个体评价结果
+    # 繁殖
+    sel_n = [0,0]
+    sel = random.random()
+    while sel < rt1[sel_n[0]]:
+        sel_n[0] += 1
+    sel = random.random()
+    while sel < rt1[sel_n[1]]:
+        sel_n[1] += 1
+    
+    
+
     i = 0
     while i < len(rt1):
         print(rt1[i],' ',rt2[i])
