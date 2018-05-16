@@ -54,10 +54,10 @@ def f():
             exit()
         rt1[i] = 1 / rt2[i]
         s1 += rt1[i];s2 += rt2[i];i += 1
-    i = 0
+    rt1[0] /= s1;rt2[0] /= s2;i = 1
     while i < len(rt1):
-        rt1[i] /= s1
-        rt2[i] /= s2
+        rt1[i] = rt1[i]/s1 + rt1[i-1]
+        rt2[i] = rt2[i]/s2 + rt2[i-1]
         i += 1
     print()
 
@@ -72,8 +72,10 @@ def ga():
         rt2.append(0)
         i += 1
     f()
-    print(rt1)
-    print(rt2)
+    i = 0
+    while i < len(rt1):
+        print(rt1[i],' ',rt2[i])
+        i += 1
 
 def main():
     init() # 初始化
