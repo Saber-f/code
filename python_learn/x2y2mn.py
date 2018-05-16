@@ -60,6 +60,7 @@ def f():
         rt1[i] /= s1
         rt2[i] /= s2
         i += 1
+    print()
 
 def ga():
     global rt1
@@ -72,7 +73,7 @@ def ga():
         rt2.append(0)
     rt = f()
     print(rt1)
-    print(rt1)
+    print(rt2)
 
 def main():
     init() # 初始化
