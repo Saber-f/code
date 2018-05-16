@@ -2,13 +2,6 @@
 import random 
 import math
 
-global n
-global dec #n列表表示的进度
-global peos_1
-global l_n # n的dec进制位数
-global rt1
-global rt2
-
 def int2list(n):
     l = [];     
     while n > 0:
@@ -25,6 +18,10 @@ def list2int(l):
 
 def init():
     # 参数设定
+    global n
+    global dec #n列表表示的进度
+    global peos_1
+    global l_n # n的dec进制位数
     n = int(input("请输入待分解的数::")) # 待分解整数
     dec = 7  # 列表进制
     peo = 10 # 人口
@@ -48,7 +45,6 @@ def init():
 
 # 适应度函数+排序
 def f():
-    rt = [] # 评价结果
     i = 0;s2 = 0;s1 = 0
     for l_t in peos_1:
         n_t1 = list2int(l_t[0:l_n//2])
@@ -66,6 +62,8 @@ def f():
         i += 1
 
 def ga():
+    global rt1
+    global rt2
     rt1 = [] # 被选取繁殖下一代的概率
     rt2 = [] # 变异，交叉概率由来
     i = 0 # 
