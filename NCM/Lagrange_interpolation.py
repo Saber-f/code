@@ -26,7 +26,7 @@ def inputxy():
     while True:
         d = input().split()
         if len(d) != 2:
-            break;
+            break
         X.extend([float(d[0])])
         Y.extend([float(d[1])])
     return X,Y

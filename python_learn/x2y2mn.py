@@ -26,7 +26,7 @@ def init():
     global l_n # n的dec进制位数
     n = int(input("请输入待分解的数::")) # 待分解整数
     dec = 2  # 列表进制
-    peo = 40 # 人口
+    peo = 200 # 人口
     if peo % 2 != 0:
         peo += 1
     peos_1 = []
@@ -50,8 +50,10 @@ def init():
     return peos_1
 
 # 适应度函数+排序
+N = 0
 def f():
-    i = 0;s2 = 0;s1 = 0;min = n
+    global N
+    i = 0;s2 = 0;s1 = 0;min = n;min_n = 0
     for l_t in peos_1:
         n_t1 = list2int(l_t[0:l_n//2])
         n_t2 = list2int(l_t[l_n//2:l_n])
@@ -61,9 +63,10 @@ def f():
             rt2[i] = abs(n_t2*n_t2 % n - n_t1*n_t1 % n)
             if min > rt2[i]:
                 min = rt2[i]
+                min_n = i
         if rt2[i] == 0:
             print(n_t1,' ',n_t2)
-            return True
+            input()
         rt1[i] = 1 / rt2[i]
         s1 += rt1[i];s2 += rt2[i];i += 1
     rt1[0] /= s1;rt2[0] /= s2;i = 1
@@ -71,12 +74,9 @@ def f():
         rt1[i] = rt1[i]/s1 + rt1[i-1]
         i += 1
     rt1[i] = 1
-    print(min)
-    for i in peos_1:
-        for j in i:
-            print(j,end='')
-        print()
-    input()
+    N += 1
+    print(N,'::',min)
+    return min_n
 
 def ga():
     global rt1
@@ -94,8 +94,7 @@ def ga():
     # 迭代求解
     
     while True:
-        if f(): # 获取新一轮的个体评价结果    
-            return
+        min_n = f()# 获取新一轮的个体评价结果    
         num = 0     # 繁殖
         while num < peo:
             sel_n = [0,0] # xuan qu shuang qing
@@ -118,31 +117,35 @@ def ga():
             while i < l_n:
                 if i >= ex[0] and i < ex[1]:
                     sel = random.random()
-                    if sel < rt2[sel_n[1]]*0.011 :
+                    if sel < rt2[sel_n[1]]*0.1 :
                         peos_2[num][i] = random.randint(0,dec-1)
                     else:
                         peos_2[num][i] = peos_1[sel_n[1]][i] 
                     
                     sel = random.random()
-                    if sel < rt2[sel_n[0]]*0.011 :
+                    if sel < rt2[sel_n[0]]*0.1 :
                         peos_2[num+1][i] = random.randint(0,dec-1)
                     else:
                         peos_2[num+1][i] = peos_1[sel_n[0]][i]
                 else:
                     sel = random.random()
-                    if sel < rt2[sel_n[1]]*0.011 :
+                    if sel < rt2[sel_n[1]]*0.1 :
                         peos_2[num+1][i] = random.randint(0,dec-1)
                     else:
                         peos_2[num+1][i] = peos_1[sel_n[1]][i] 
 
                     sel = random.random()
-                    if sel < rt2[sel_n[0]]*0.011 :
+                    if sel < rt2[sel_n[0]]*0.1 :
                         peos_2[num][i] = random.randint(0,dec-1)
                     else:
                         peos_2[num][i] = peos_1[sel_n[0]][i]
                 i += 1
             num += 2
-        t = peos_1;peos_1 = peos_2;peos_2 = t;
+        j = 0
+        for i in peos_1[min_n]:
+            peos_2[0][j] = i
+            j += 1
+        t = peos_1;peos_1 = peos_2;peos_2 = t
     
 
 def main():
