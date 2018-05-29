@@ -33,7 +33,7 @@ def inputxy():
 
 def plotxy(X,Y,Lnx): #画出插值多项式以及已知点的图像
     plt.scatter(X,Y)
-    px = arange(min(X),max(X),(max(X) - min(X)) / 100);
+    px = arange(min(X),max(X),(max(X) - min(X)) / 100)
     py = []
     for t in px:
         py.extend([Lnx.subs(x,t)])
