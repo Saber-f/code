@@ -1,7 +1,7 @@
 # 有理逼近算法
 
 class ra:
-    def compare(self,a,b)
+    def compare(self,a,b):
         if abs(a) > abs(b):
             return abs(a)
         else:
@@ -73,7 +73,7 @@ class ra:
                 P *= 2
                 Q *= 2
             else:
-                [p,q,P,Q] = self.updata()
+                [p,q,P,Q] = self.updata(p,q,P,Q)
 
         # 输出结果
         self.show(p,q)
