@@ -240,7 +240,7 @@ class wins:
         self.MC = Entry(self.win, width = 50, font = ft)             # 明密文输入框             
         self.MC.place(relx=0.2, rely=0.1, y=3)
         self.K = Entry(self.win, width = 50, font = ft)              # 密钥输入框             
-        self.K.place(relx=0.2, rely=0.3)
+        self.K.place(relx=0.2, rely=0.3, y=3)
         self.mc = Text(self.win,height = 1, width = 50, font = ft)   # 明密文输出
         self.mc.place(relx=0.2, rely=0.5, y=3)         
 
