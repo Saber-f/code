@@ -54,7 +54,7 @@ class ra:
         t = 0
         for i in a:
             if i == '1':
-                break;
+                break
             t += 1         # 获得序列中第一个不为0的角标t
         if t < N:
             p = alf = 2**t
@@ -69,7 +69,7 @@ class ra:
         for k in range(t+1,N-1):
             if a[k] == '1':
                 alf += 2**k
-            if p == q*alf%2**(k+1):
+            if p == (q*alf)%(2**(k+1)):
                 P *= 2
                 Q *= 2
             else:
