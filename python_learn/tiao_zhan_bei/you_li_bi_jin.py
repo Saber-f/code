@@ -1,19 +1,15 @@
 # 有理逼近算法
 
 class ra:
-    def compare(self,a,b):
-        if abs(a) > abs(b):
-            return abs(a)
-        else:
-            return abs(b)
-
     def find_d(self,m,n,x,y):
         d = [0,0]
         s = [0,0]
         if x*y >= 0:
-            z = -(x+y)//(m+n)
+            z = -((x+y)//(m+n))
         else:
-            z = -(x-y)//(m-n)
+            z = -((x-y)//(m-n))
+        if z > 0:
+            z -= 1
 
         if z%2 == 1:
             d[0] = z
@@ -21,14 +17,14 @@ class ra:
         else:
             d[0] = z - 1
             d[1] = z + 1
-        s[0] = self.compare(m + d[0]*x,n + d[0]*y)
-        s[1] = self.compare(m + d[1]*x,n + d[1]*y)
+        s[0] = min(abs(m + d[0]*x),abs(n + d[0]*y))
+        s[1] = min(abs(m + d[1]*x),abs(n + d[1]*y))
         return min(s)
 
 
     def updata(self,a,b,c,d):
-        h = self.compare(a,b)
-        g = self.compare(c,d)
+        h = max(abs(a),abs(b))
+        g = max(abs(c),abs(d))
 
         if h >= g:
             w = self.find_d(a,b,c,d)
@@ -87,3 +83,10 @@ class ra:
 a = '01111111100010101011'
 R = ra()
 R.RA(a)
+
+'''
+if(x*y>=0,
+z=-(m+n)\(x+y);if(z%2==1,d[1]=z;d[2]=z+2,d[1]=z-1;d[2]=z+1;);s[1]=compare(m+d[1]*x,n+d[1]*y);s[2]=compare(m+d[2]*x,n+d[2]*y);if(s[1]>=s[2],return(d[2]),return(d[1]);),
+z=-(m-n)\(x-y);if(z%2==1,d[1]=z;d[2]=z+2,d[1]=z-1;d[2]=z+1;);s[1]=compare(m+d[1]*x,n+d[1]*y);s[2]=compare(m+d[2]*x,n+d[2]*y);if(s[1]>=s[2],return(d[2]),return(d[1]);););
+
+'''

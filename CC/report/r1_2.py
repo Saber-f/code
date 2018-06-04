@@ -9,21 +9,44 @@ class classical_encryption:
         self.model = False
         self.fun()
 
-    def decode(self):                           # 解密
+    def decode(self):                                         # 解密
         self.model = True
         self.fun()
 
     def fun(self):
         MC = list(self.MC.get())
-        K = int(self.K.get())  
+        K = list(self.K.get())  
+        K = list(set(K))                                     # 去重
 #====================================加解密开始==============================================
-        n = 26
-        n_ = ord('a')
-        txt = ''
-        if self.model:                         # 解密
-            K = -K
-        for i in MC:
-            txt += chr(n_ + (ord(i)-n_+K)%n)
+        cK = K.copy()                                        # 获取索引
+        s = [];cK.sort()
+        for t in cK:
+            s.append(K.index(t))
+
+        cK = []
+        for i in range(len(MC)%len(K)):
+            cK.append(K[i])
+        s_ = [];cK.sort()
+        for t in cK:
+            s_.append(K.index(t))
+        
+        if self.model:
+            cs = s.copy()
+            for i in range(len(s)):
+                s[i] = cs.index(i)
+
+            cs_ = s_.copy()
+            for i in range(len(s_)):
+                s_[i] = cs_.index(i)
+
+        txt = '';j = -len(K)
+        for i in range(len(MC)//len(K) * len(K)):           # 加解密
+            if i % len(K) == 0:
+                j += len(K)
+            txt += MC[s[i-j]+j]
+
+        for i in range(len(s_)):
+            txt += MC[s_[i]+len(MC)//len(K) * len(K)]
 #=====================================加解密结束===========================================
         self.mc.delete(0.0,"end")                         # 清空
         self.mc.insert("end",txt)
@@ -31,7 +54,7 @@ class classical_encryption:
     def become(self):
         self.win.iconbitmap("nike.ico")                  # 设置图标
         self.win.geometry("500x200")                     # 设置窗口尺寸
-        self.win.title("替换密码")                        # 设置标题
+        self.win.title("置换密码")                        # 设置标题
         
         ft = tkFont.Font(family='Fixdsys', size=10) 
         self.MC = tk.Entry(self.win, width = 50, font = ft)             # 明密文输入框             
