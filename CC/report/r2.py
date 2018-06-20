@@ -233,16 +233,16 @@ class wins:
     def __init__(self):
         self.win = Tk()
         self.win.iconbitmap("nike.ico")                  # 设置图标
-        self.win.geometry("500x200")                     # 设置窗口尺寸
+        self.win.geometry("650x200")                     # 设置窗口尺寸
         self.win.title("DES")                        # 设置标题
         
         ft = tkFont.Font(family='Fixdsys', size=10) 
-        self.MC = Entry(self.win, width = 50, font = ft)             # 明密文输入框             
-        self.MC.place(relx=0.2, rely=0.1, y=3)
-        self.K = Entry(self.win, width = 50, font = ft)              # 密钥输入框             
-        self.K.place(relx=0.2, rely=0.3, y=3)
-        self.mc = Text(self.win,height = 1, width = 50, font = ft)   # 明密文输出
-        self.mc.place(relx=0.2, rely=0.5, y=3)         
+        self.MC = Entry(self.win, width = 70, font = ft)             # 明密文输入框             
+        self.MC.place(relx=0.17, rely=0.1, y=3)
+        self.K = Entry(self.win, width = 70, font = ft)              # 密钥输入框             
+        self.K.place(relx=0.17, rely=0.3, y=3)
+        self.mc = Text(self.win,height = 1, width = 70, font = ft)   # 明密文输出
+        self.mc.place(relx=0.17, rely=0.5, y=3)         
 
         self.l1 = Label(self.win, text="明(密)文:") 
         self.l1.place(relx=0.05, rely=0.1)
@@ -267,9 +267,10 @@ class wins:
     def fun(self):
         MC = list(self.MC.get())
         K = list(self.K.get())  
-        K = list(set(K))                                     # 去重
 #=====================================加解密开始===========================================
-        txt = "hello"
+        txt = ''
+        for i in DES(MC,K,self.model):
+            txt += i
 #=====================================加解密结束===========================================
         self.mc.delete(0.0,"end")                         # 清空
         self.mc.insert("end",txt)
