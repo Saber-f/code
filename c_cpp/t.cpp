@@ -1,25 +1,12 @@
-#include <iostream>
-using namespace std;
-
-class A
-{
-	public:
-		A(int i, double j) {a = i; b = j;}
-		void p() {cout << a << ',' << b << endl;}
-		A operator+(const A &a)
-		{
-			A c(this->a+a.a,this->b+b.b );
-			c.a = this->a + a.a;
-			c.b = this->b + a.b;
-			return c;
-		}
-	private: 
-		int a;
-		double b;
-};
+#include <stdio.h>
+#include <math.h>
 
 int main(void)
-{
-		
+{	
+	float x = -4,y;
+	y = sqrt(x);
+	printf("%f\n",y);
+	if(x < 0) y = sqrt(-x);
+	printf("%f\n",y);
 	return 0;
 }
