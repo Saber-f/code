@@ -1,6 +1,6 @@
 %% 检查数据是否含有科学记数法表示的数
 tic;clear;clc;
-NUMC = 6;
+NUMC = 8;
 %NUM3 = [71001,71004,151010,171002];                                        %NUM3为不能同堂考多门的科目编号
 NUM3 = [];
 fileID = fopen('input_datagj.txt','r');

@@ -1,0 +1,34 @@
+%%
+% Define the convolutional neural network architecture.
+layers = [imageInputLayer([28 28 1]);
+          convolution2dLayer(5,16);
+          reluLayer();
+          maxPooling2dLayer(2,'Stride',2);
+          fullyConnectedLayer(3);
+          softmaxLayer();
+          classificationLayer()];
+      
+%%
+% Set the options to default settings for the stochastic gradient descent
+% with momentum.
+options = trainingOptions('sgdm');
+
+%%
+% Train the network.
+rng('default') % For reproducibility
+net = trainNetwork(XTrain,TTrain,layers,options);
+
+%%
+% Run the trained network on a test set that was not used to train the
+% network and predict the image labels (letters).
+load lettersTestSet;
+
+%%
+% XTest contains 1500 28-by-28 grayscale images of the letters A, B, and C
+% in a 4-D array. There is again equal numbers of each letter in the data
+% set. TTest contains the categorical array of the letter labels.
+YTest = classify(net,XTest);
+
+%%
+% Calculate the accuracy.
+accuracy = sum(YTest == TTest)/numel(TTest)

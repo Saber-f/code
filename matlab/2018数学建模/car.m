@@ -11,7 +11,7 @@ for k = 1:10000
         elseif(sum(S(m,end)) == 1)
             t(m) = 1;
         else
-            t(m) = floor(rand+0.001);
+            t(m) = floor(rand+0.1);
         end
     end
     S = [S(:,2:end),t];
