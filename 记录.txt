@@ -1,0 +1,11 @@
+排序算法
+素数判定算法
+字符串匹配
+
+A A A C C B B B B C
+A A A C C B B B B C
+
+
+A A A A          B B B
+A A A A                   B B B
+A A A A                   B B B
