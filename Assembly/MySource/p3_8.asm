@@ -1,0 +1,11 @@
+mov ax,1000h
+mov ss,ax
+mov sp,0010h
+mov ax,001ah
+mov bx,001bh
+push ax
+push bx
+mov ax,ax
+mov bx,bx
+pop bx
+pop ax

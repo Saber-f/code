@@ -1,0 +1,9 @@
+mov ax,0123h
+push ax
+mov bx,2266h
+push bx
+mov cx,1122h
+push cx
+pop ax
+pop bx
+pop cx
