@@ -10,5 +10,5 @@ load car
 L = length(car);
 
 options = optimoptions('ga','PopulationSize',600,'MaxGenerations',100);%,'MaxStallGenerations',100);
-[x,y] = ga(@f1,L+1,[],[],[],[],ones(1,L+1),ones(1,L+1)*(L+1)-0.00001,[],options);
+[x,y] = ga(@qq,L+1,[],[],[],[],ones(1,L+1),ones(1,L+1)*(L+1)-0.00001,[],options);
 

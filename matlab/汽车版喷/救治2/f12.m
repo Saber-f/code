@@ -9,6 +9,7 @@ function y = f12(x)
     for i = 1:size(C,1)
         h = is(1) + round(is(2) * se(i));
         yt = 0;                   %每台的完成时间
+        [~,t] = sort(D(s(is(1):h),1));s(is(1):h) = s(t+is(1)-1);  %重伤优先
         for j = is(1):h           %s(j)为再第i台设备上的伤员
             yt = yt + W(i,j-is(1)+1); %准备时间
             yt = yt + C(i,D(s(j),1)*2+1) + C(i,D(s(j),1)*2+2) * D(s(j),2);

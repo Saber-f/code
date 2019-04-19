@@ -141,5 +141,5 @@ function y = ff(djp,Cj)
     end
     
     %¿Í»§   
-    y = y1 + 2*y2;
+    y = 0.4*y1 + 0.6*y2;
 end

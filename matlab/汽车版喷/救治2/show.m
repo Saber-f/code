@@ -10,6 +10,7 @@ function [] = show(x)
         yt = 0;                   %每台的完成时间
         fprintf('第%d台设备\n',i);
         fprintf('编号      0重1轻     开始治疗时间       治疗完成时间        风险感知度\n')
+        [~,t] = sort(D(s(is(1):h),1));s(is(1):h) = s(t+is(1)-1);  %重伤优先
         for j = is(1):h           %s(j)为再第i台设备上的伤员
             yt = yt + W(i,j-is(1)+1); %准备时间
             t = yt;
