@@ -1,0 +1,43 @@
+﻿<Window x:Class="counter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:counter"
+        mc:Ignorable="d"
+        Title="计算器" Height="498" Width="371" MinWidth="371" MinHeight="498" MaxWidth="371" MaxHeight="498">
+    <Grid>
+        <Label x:Name="screen" Content="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Height="54" Width="337" Background="#FFEAE7E7" FontSize="38"/>
+        <Button x:Name="button_ms" Content="MS" HorizontalAlignment="Left" Margin="146,112,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="23" Click="Button_Click_ms"/>
+        <Button x:Name="button_mr" Content="MR" HorizontalAlignment="Left" Margin="77,112,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="23" Click="Button_Click_mr"/>
+        <Button x:Name="button_msub" Content="M-" HorizontalAlignment="Left" Margin="287,112,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="23" Click="Button_Click_msub"/>
+        <Button x:Name="button_madd" Content="M+" HorizontalAlignment="Left" Margin="215,112,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="23" Click="Button_Click_madd"/>
+        <Button x:Name="button_mc" Content="MC" HorizontalAlignment="Left" Margin="10,112,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="23" Click="Button_Click_mc"/>
+        <Button x:Name="button_c" Content="C" HorizontalAlignment="Left" Margin="146,171,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="23" Click="Button_Click_c"/>
+        <Button x:Name="button_ce" Content="CE" HorizontalAlignment="Left" Margin="77,171,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="23" Click="Button_Click_ce"/>
+        <Button x:Name="button_root" Content="√" HorizontalAlignment="Left" Margin="287,171,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="32" Click="Button_Click_root"/>
+        <Button x:Name="button_pm" Content="±" HorizontalAlignment="Left" Margin="215,171,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="32" Click="Button_Click_pm"/>
+        <Button x:Name="button_bk" Content="←" HorizontalAlignment="Left" Margin="10,171,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="32" Click="Button_Click_bk"/>
+        <Button x:Name="button_9" Content="9" HorizontalAlignment="Left" Margin="146,229,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="26" Click="Button_Click_9"/>
+        <Button x:Name="button_8" Content="8" HorizontalAlignment="Left" Margin="77,229,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="26" Click="Button_Click_8"/>
+        <Button x:Name="button_per" Content="%" HorizontalAlignment="Left" Margin="287,229,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="32" Click="Button_Click_per"/>
+        <Button x:Name="button_div" Content="/" HorizontalAlignment="Left" Margin="215,229,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="32" Click="Button_Click_div"/>
+        <Button x:Name="button_7" Content="7" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="26" Click="Button_Click_7"/>
+        <Button x:Name="button_6" Content="6" HorizontalAlignment="Left" Margin="146,285,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="26" Click="Button_Click_6"/>
+        <Button x:Name="button_5" Content="5" HorizontalAlignment="Left" Margin="77,285,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="26" Click="Button_Click_5"/>
+        <Button x:Name="button_rec" Content="1/x" HorizontalAlignment="Left" Margin="287,285,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="26" Click="Button_Click_rec"/>
+        <Button x:Name="button_mul" Content="*" HorizontalAlignment="Left" Margin="215,285,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="32" Click="Button_Click_mul"/>
+        <Button x:Name="button_4" Content="4" HorizontalAlignment="Left" Margin="10,285,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="26" Click="Button_Click_4"/>
+        <Button x:Name="button_3" Content="3" HorizontalAlignment="Left" Margin="146,344,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="26" Click="Button_Click_3"/>
+        <Button x:Name="button_2" Content="2" HorizontalAlignment="Left" Margin="77,344,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="26" Click="Button_Click_2"/>
+        <Button x:Name="button_sub" Content="-" HorizontalAlignment="Left" Margin="215,344,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="32" Click="Button_Click_sub"/>
+        <Button x:Name="button_1" Content="1" HorizontalAlignment="Left" Margin="10,344,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="26" Click="Button_Click_1"/>
+        <Button x:Name="button_rp" Content="." HorizontalAlignment="Left" Margin="146,402,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="32" Click="Button_Click_rp"/>
+        <Button x:Name="button_equ" Content="=" HorizontalAlignment="Left" Margin="287,344,0,0" VerticalAlignment="Top" Width="60" Height="108" FontSize="32" Click="Button_Click_equ"/>
+        <Button x:Name="button_add" Content="+" HorizontalAlignment="Left" Margin="215,402,0,0" VerticalAlignment="Top" Width="60" Height="50" FontSize="32" Click="Button_Click_add"/>
+        <Button x:Name="button_0" Content="0" HorizontalAlignment="Left" Margin="10,402,0,0" VerticalAlignment="Top" Width="127" Height="50" FontSize="26" Click="Button_Click_0"/>
+        <Label x:Name="screen2" Content="" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" HorizontalAlignment="Left" Margin="111,10,0,0" VerticalAlignment="Top" Height="35" Width="236" Background="#FFEAE7E7" FontSize="16"/>
+        <Label x:Name="screen3" Content="" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="35" Width="101" Background="#FFEAE7E7"/>
+
+    </Grid>
+</Window>
