@@ -6,7 +6,7 @@ a ends
 b segment
    dw 0,0,0,0,0,0,0,0
 b ends
-
+   
 code segment
 start:
       mov ax,a
